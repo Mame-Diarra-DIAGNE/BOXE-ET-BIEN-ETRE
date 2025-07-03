@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boxe & Bien-Être</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1E2B45;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #D8A641;
+      color: #1E2B45;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      background-color: #1E2B45;
+      padding: 0.5rem 1rem;
+      gap: 1rem;
+    }
+
+    nav a, nav button {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #D8A641;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      background: none;
+      cursor: pointer;
+    }
+
+    nav a:hover, nav button:hover {
+      background-color: #D8A641;
+      color: #1E2B45;
+    }
+
+    .section {
+      padding: 2rem;
+      border-bottom: 1px solid #D8A641;
+    }
+
+    h2 {
+      color: #D8A641;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .grid img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #D8A641;
+      color: #1E2B45;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Boxe & Bien-Être</h1>
+    <p id="slogan">Découvrez la boxe autrement, sans salle et sans sac</p>
+  </header>
+
+  <nav>
+    <a href="#inscription" id="nav-inscription">Inscription</a>
+    <a href="#connexion" id="nav-connexion">Connexion</a>
+    <a href="#reserver" id="nav-reserver">Réserver</a>
+    <button onclick="toggleLang()" id="langButton">EN</button>
+  </nav>
+
+  <section class="section grid">
+    <div>
+      <h2 id="method-title">Méthode</h2>
+      <p id="method-1">Mélange de boxe Thaï, Kung-fu et Yoga</p>
+      <p id="method-2">Séances dynamiques, ludiques et positives</p>
+    </div>
+    <img src="images/entrainement.jpg" alt="Boxe image" />
+  </section>
+
+  <section class="section grid">
+    <img src="images/portrait.jpg" alt="Coach Brice" />
+    <div>
+      <h2 id="benefits-title">Bienfaits</h2>
+      <ul id="benefits-list">
+        <li>Renforcement musculaire</li>
+        <li>Cardio</li>
+        <li>Confiance en soi</li>
+        <li>Posture</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 id="practice-title">En pratique</h2>
+    <p id="practice-1">Solo ou Duo, tout public</p>
+    <p id="practice-2">À domicile ou en extérieur</p>
+    <p id="practice-3">Tarif dégressif</p>
+  </section>
+
+  <section class="section" id="reserver">
+    <h2 id="book-title">Réserver</h2>
+    <p id="book-info">Contactez-nous pour réserver une séance</p>
+    <button id="book-button">Réserver maintenant</button>
+    <h2 id="contact-title">Contact</h2>
+    <p>Téléphone / Phone: 06 08 91 67 57</p>
+    <p>Email: brice.ait.sport@gmail.com</p>
+    <p id="location">Adresse : Grenoble</p>
+    <a href="https://wa.me/33785631190" class="btn">WhatsApp</a>
+  </section>
+
+  <section class="section" id="inscription">
+    <h2 id="signup-title">Inscription</h2>
+    <p id="signup-info">Créez votre compte pour accéder aux séances</p>
+    <button id="signup-button">S'inscrire</button>
+  </section>
+
+  <section class="section" id="connexion">
+    <h2 id="login-title">Connexion</h2>
+    <p id="login-info">Déjà inscrit ? Connectez-vous ici</p>
+    <button id="login-button">Se connecter</button>
+  </section>
+
+  <footer>
+    Coach Brice – Boxeur professionnel<br />
+    Coach sportif diplômé d'État – SIRET 076790809775
+  </footer>
+
+  <script>
+    const translations = {
+      fr: {
+        title: "Boxe & Bien-Être",
+        slogan: "Découvrez la boxe autrement, sans salle et sans sac",
+        "nav-inscription": "Inscription",
+        "nav-connexion": "Connexion",
+        "nav-reserver": "Réserver",
+        "method-title": "Méthode",
+        "method-1": "Mélange de boxe Thaï, Kung-fu et Yoga",
+        "method-2": "Séances dynamiques, ludiques et positives",
+        "benefits-title": "Bienfaits",
+        "benefits-list": [
+          "Renforcement musculaire",
+          "Cardio",
+          "Confiance en soi",
+          "Posture"
+        ],
+        "practice-title": "En pratique",
+        "practice-1": "Solo ou Duo, tout public",
+        "practice-2": "À domicile ou en extérieur",
+        "practice-3": "Tarif dégressif",
+        "book-title": "Réserver",
+        "book-info": "Contactez-nous pour réserver une séance",
+        "book-button": "Réserver maintenant",
+        "contact-title": "Contact",
+        location: "Adresse : Grenoble",
+        "signup-title": "Inscription",
+        "signup-info": "Créez votre compte pour accéder aux séances",
+        "signup-button": "S'inscrire",
+        "login-title": "Connexion",
+        "login-info": "Déjà inscrit ? Connectez-vous ici",
+        "login-button": "Se connecter"
+      },
+      en: {
+        title: "Boxing & Wellness",
+        slogan: "Discover boxing differently, without gym or punching bag",
+        "nav-inscription": "Sign Up",
+        "nav-connexion": "Login",
+        "nav-reserver": "Book",
+        "method-title": "Method",
+        "method-1": "Blend of Thai boxing, Kung-fu and Yoga",
+        "method-2": "Dynamic, fun and positive sessions",
+        "benefits-title": "Benefits",
+        "benefits-list": [
+          "Muscle strengthening",
+          "Cardio",
+          "Self-confidence",
+          "Posture"
+        ],
+        "practice-title": "How it works",
+        "practice-1": "Solo or Duo, for all ages",
+        "practice-2": "At home or outdoors",
+        "practice-3": "Discount rates",
+        "book-title": "Book a session",
+        "book-info": "Contact us to book a session",
+        "book-button": "Book now",
+        "contact-title": "Contact",
+        location: "Location: Grenoble",
+        "signup-title": "Sign Up",
+        "signup-info": "Create your account to access the sessions",
+        "signup-button": "Sign up",
+        "login-title": "Login",
+        "login-info": "Already registered? Log in here",
+        "login-button": "Login"
+      }
+    };
+
+    let currentLang = "fr";
+
+    function toggleLang() {
+      currentLang = currentLang === "fr" ? "en" : "fr";
+      document.documentElement.lang = currentLang;
+      document.getElementById("langButton").textContent = currentLang === "fr" ? "EN" : "FR";
+
+      const t = translations[currentLang];
+
+      for (const key in t) {
+        if (Array.isArray(t[key])) {
+          const ul = document.getElementById(key);
+          ul.innerHTML = t[key].map(item => `<li>${item}</li>`).join("");
+        } else {
+          const el = document.getElementById(key);
+          if (el) el.textContent = t[key];
+        }
+      }
+    }
+  </script>
+</body>
+</html>

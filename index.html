@@ -28,18 +28,17 @@
       gap: 1rem;
     }
 
-    nav a, nav button {
+    nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
       border: 1px solid #D8A641;
       padding: 0.4rem 0.8rem;
       border-radius: 5px;
-      background: none;
-      cursor: pointer;
+      transition: background 0.3s;
     }
 
-    nav a:hover, nav button:hover {
+    nav a:hover {
       background-color: #D8A641;
       color: #1E2B45;
     }
@@ -81,27 +80,66 @@
         flex-direction: column;
         align-items: flex-end;
       }
+
+      .video-carousel {
+        height: 200px;
+      }
+
+      .video-carousel iframe {
+        height: 100%;
+      }
+    }
+
+    /* Carrousel vidéo */
+    .video-carousel {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      margin: auto;
+      position: relative;
+    }
+
+    .video-carousel iframe {
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+      transition: transform 0.5s ease-in-out;
+      border: none;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1 id="title">Boxe & Bien-Être</h1>
-    <p id="slogan">Découvrez la boxe autrement, sans salle et sans sac</p>
+    <h1>Boxe & Bien-Être</h1>
+    <p>Découvrez la boxe autrement, sans salle et sans sac</p>
   </header>
 
   <nav>
-    <a href="#inscription" id="nav-inscription">Inscription</a>
-    <a href="#connexion" id="nav-connexion">Connexion</a>
-    <a href="#reserver" id="nav-reserver">Réserver</a>
+    <a href="#inscription">Inscription</a>
+    <a href="#connexion">Connexion</a>
+    <a href="#reserver">Réserver</a>
     <button onclick="toggleLang()" id="langButton">EN</button>
+    <script>
+      function toggleLang() {
+        const button = document.getElementById('langButton');
+        if (button.textContent === 'EN') {
+          button.textContent = 'FR';
+          document.documentElement.lang = 'en';
+        } else {
+          button.textContent = 'EN';
+          document.documentElement.lang = 'fr';
+        }
+      }
+    </script>
   </nav>
 
   <section class="section grid">
     <div>
-      <h2 id="method-title">Méthode</h2>
-      <p id="method-1">Mélange de boxe Thaï, Kung-fu et Yoga</p>
-      <p id="method-2">Séances dynamiques, ludiques et positives</p>
+      <h2>Méthode</h2>
+      <p>Mélange de boxe Thaï, Kung-fu et Yoga</p>
+      <p>Séances dynamiques, ludiques et positives</p>
     </div>
     <img src="images/entrainement.jpg" alt="Boxe image" />
   </section>
@@ -109,8 +147,8 @@
   <section class="section grid">
     <img src="images/portrait.jpg" alt="Coach Brice" />
     <div>
-      <h2 id="benefits-title">Bienfaits</h2>
-      <ul id="benefits-list">
+      <h2>Bienfaits</h2>
+      <ul>
         <li>Renforcement musculaire</li>
         <li>Cardio</li>
         <li>Confiance en soi</li>
@@ -120,33 +158,42 @@
   </section>
 
   <section class="section">
-    <h2 id="practice-title">En pratique</h2>
-    <p id="practice-1">Solo ou Duo, tout public</p>
-    <p id="practice-2">À domicile ou en extérieur</p>
-    <p id="practice-3">Tarif dégressif</p>
+    <h2>En pratique</h2>
+    <p>Solo ou Duo, tout public</p>
+    <p>À domicile ou en extérieur</p>
+    <p>Tarif dégressif</p>
   </section>
 
   <section class="section" id="reserver">
-    <h2 id="book-title">Réserver</h2>
-    <p id="book-info">Contactez-nous pour réserver une séance</p>
-    <button id="book-button">Réserver maintenant</button>
-    <h2 id="contact-title">Contact</h2>
+    <h2>Réserver</h2>
+    <p>Contactez-nous pour réserver une séance</p>
+    <button>Réserver maintenant / Book now</button>
+    <h2>Contact</h2>
     <p>Téléphone / Phone: 06 08 91 67 57</p>
     <p>Email: brice.ait.sport@gmail.com</p>
-    <p id="location">Adresse : Grenoble</p>
+    <p>Adresse : Grenoble</p>
     <a href="https://wa.me/33785631190" class="btn">WhatsApp</a>
   </section>
 
   <section class="section" id="inscription">
-    <h2 id="signup-title">Inscription</h2>
-    <p id="signup-info">Créez votre compte pour accéder aux séances</p>
-    <button id="signup-button">S'inscrire</button>
+    <h2>Inscription / Sign up</h2>
+    <p>Créez votre compte pour accéder aux séances</p>
+    <button>S'inscrire / Sign up</button>
   </section>
 
   <section class="section" id="connexion">
-    <h2 id="login-title">Connexion</h2>
-    <p id="login-info">Déjà inscrit ? Connectez-vous ici</p>
-    <button id="login-button">Se connecter</button>
+    <h2>Connexion</h2>
+    <p>Déjà inscrit ? Connectez-vous ici</p>
+    <button>Se connecter / Login</button>
+  </section>
+
+  <section class="section">
+    <h2>Brice Coach Boxe Thaï</h2>
+    <div class="video-carousel">
+      <iframe src="https://www.youtube.com/embed/kMETfc_yeGk" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/M1iW_RHrgdQ" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/A-EfxKmi2h4" allowfullscreen></iframe>
+    </div>
   </section>
 
   <footer>
@@ -155,92 +202,15 @@
   </footer>
 
   <script>
-    const translations = {
-      fr: {
-        title: "Boxe & Bien-Être",
-        slogan: "Découvrez la boxe autrement, sans salle et sans sac",
-        "nav-inscription": "Inscription",
-        "nav-connexion": "Connexion",
-        "nav-reserver": "Réserver",
-        "method-title": "Méthode",
-        "method-1": "Mélange de boxe Thaï, Kung-fu et Yoga",
-        "method-2": "Séances dynamiques, ludiques et positives",
-        "benefits-title": "Bienfaits",
-        "benefits-list": [
-          "Renforcement musculaire",
-          "Cardio",
-          "Confiance en soi",
-          "Posture"
-        ],
-        "practice-title": "En pratique",
-        "practice-1": "Solo ou Duo, tout public",
-        "practice-2": "À domicile ou en extérieur",
-        "practice-3": "Tarif dégressif",
-        "book-title": "Réserver",
-        "book-info": "Contactez-nous pour réserver une séance",
-        "book-button": "Réserver maintenant",
-        "contact-title": "Contact",
-        location: "Adresse : Grenoble",
-        "signup-title": "Inscription",
-        "signup-info": "Créez votre compte pour accéder aux séances",
-        "signup-button": "S'inscrire",
-        "login-title": "Connexion",
-        "login-info": "Déjà inscrit ? Connectez-vous ici",
-        "login-button": "Se connecter"
-      },
-      en: {
-        title: "Boxing & Wellness",
-        slogan: "Discover boxing differently, without gym or punching bag",
-        "nav-inscription": "Sign Up",
-        "nav-connexion": "Login",
-        "nav-reserver": "Book",
-        "method-title": "Method",
-        "method-1": "Blend of Thai boxing, Kung-fu and Yoga",
-        "method-2": "Dynamic, fun and positive sessions",
-        "benefits-title": "Benefits",
-        "benefits-list": [
-          "Muscle strengthening",
-          "Cardio",
-          "Self-confidence",
-          "Posture"
-        ],
-        "practice-title": "How it works",
-        "practice-1": "Solo or Duo, for all ages",
-        "practice-2": "At home or outdoors",
-        "practice-3": "Discount rates",
-        "book-title": "Book a session",
-        "book-info": "Contact us to book a session",
-        "book-button": "Book now",
-        "contact-title": "Contact",
-        location: "Location: Grenoble",
-        "signup-title": "Sign Up",
-        "signup-info": "Create your account to access the sessions",
-        "signup-button": "Sign up",
-        "login-title": "Login",
-        "login-info": "Already registered? Log in here",
-        "login-button": "Login"
-      }
-    };
+    let videoIndex = 0;
+    const videoCarousel = document.querySelector('.video-carousel');
+    const videos = videoCarousel.children;
+    const totalVideos = videos.length;
 
-    let currentLang = "fr";
-
-    function toggleLang() {
-      currentLang = currentLang === "fr" ? "en" : "fr";
-      document.documentElement.lang = currentLang;
-      document.getElementById("langButton").textContent = currentLang === "fr" ? "EN" : "FR";
-
-      const t = translations[currentLang];
-
-      for (const key in t) {
-        if (Array.isArray(t[key])) {
-          const ul = document.getElementById(key);
-          ul.innerHTML = t[key].map(item => `<li>${item}</li>`).join("");
-        } else {
-          const el = document.getElementById(key);
-          if (el) el.textContent = t[key];
-        }
-      }
-    }
+    setInterval(() => {
+      videoIndex = (videoIndex + 1) % totalVideos;
+      videoCarousel.style.transform = `translateX(-${videoIndex * 100}%)`;
+    }, 8000); // défile toutes les 8 secondes
   </script>
 </body>
 </html>
